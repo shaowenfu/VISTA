@@ -1,121 +1,153 @@
-# VISTA - Visual Intelligence Support & Technical Assistant for BLV
-# VISTA - 视觉智能辅助系统（面向视障群体）
+<div align="center">
+  <h1>� VISTA</h1>
+  <p><strong>Visual Intelligence Support & Technical Assistant for BLV</strong></p>
+  
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+  ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=flat&logo=Flutter&logoColor=white)
+  ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)
+  ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
+  
+  [English](README.md) | [中文](README_zh.md)
+</div>
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+## 🌟 Project Vision
 
-[English](#english) | [中文](#中文)
+VISTA aims to revolutionize how Blind and Low Vision (BLV) individuals interact with their environment through cutting-edge AI technologies. Beyond traditional assistive tools, VISTA strives to become a comprehensive multimodal AI companion that enhances perception, cognition, and interaction capabilities.
 
-<h2 id="english">English</h2>
+## 🎯 Core Challenges We Address
 
-## Overview
-VISTA is an open-source assistive technology project specifically designed for Blind and Low Vision (BLV) people, helping them better perceive and interact with their environment through multimodal AI technologies.
+| Challenge | Solution |
+|-----------|----------|
+| 🚶‍♂️ **Navigation & Mobility** | Advanced sensor fusion (mmWave radar + LiDAR) for all-weather perception |
+| 👥 **Social Interaction** | Real-time social cue interpretation and non-visual feedback |
+| 📱 **Digital Accessibility** | Seamless multimodal interaction across devices and platforms |
+| 🏥 **Healthcare Access** | Intelligent medical assistance and health monitoring |
 
-### Related Repositories
-- [Vista-frontend](https://github.com/yourusername/Vista-frontend) - Flutter mobile application
-- [Vista-backend](https://github.com/yourusername/Vista-backend) - FastAPI backend server
+## 🏗️ System Architecture
 
-### Key Features
-- Scene understanding and description
-- Text recognition and reading
-- Object detection and identification
+``` mermaid
+graph TD
+    A[Perception Layer] --> B[Inference Layer]
+    B --> C[Interaction Layer]
+    C --> D[Execution Layer]
+    
+    A --> |Sensor Data| E[Event Bus]
+    B --> |Decisions| E
+    C --> |User Input| E
+    D --> |Status| E
+```
+
+### Key Components
+
+1. **Perception System**
+   - Multi-sensor fusion
+   - Environmental mapping
+   - Real-time object tracking
+   - Spatial audio processing
+
+2. **Inference Engine**
+   - Scene understanding (GPT-4V)
+   - Risk assessment
+   - Path planning
+   - Context awareness
+
+3. **Interaction Interface**
+   - Natural language processing
+   - Haptic feedback system
+   - 3D audio navigation
+   - Gesture recognition
+
+## 🛠️ Technology Stack
+
+<table>
+  <tr>
+    <th>Layer</th>
+    <th>Technologies</th>
+    <th>Features</th>
+  </tr>
+  <tr>
+    <td>Frontend</td>
+    <td>
+      <img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=flat&logo=Flutter&logoColor=white" alt="Flutter"/>
+    </td>
+    <td>
+      - Cross-platform support<br>
+      - Accessible UI/UX<br>
+      - Real-time processing
+    </td>
+  </tr>
+  <tr>
+    <td>Backend</td>
+    <td>
+      <img src="https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi" alt="FastAPI"/>
+    </td>
+    <td>
+      - High-performance API<br>
+      - Async processing<br>
+      - Scalable architecture
+    </td>
+  </tr>
+  <tr>
+    <td>AI Services</td>
+    <td>
+      <img src="https://img.shields.io/badge/GPT--4V-412991?style=flat&logo=openai&logoColor=white" alt="GPT-4V"/>
+    </td>
+    <td>
+      - Scene understanding<br>
+      - Multimodal fusion<br>
+      - Contextual awareness
+    </td>
+  </tr>
+</table>
+
+## 📦 Related Repositories
+
+### Core Components
+- 📱 [Vista-frontend](https://github.com/shaowenfu/Vista-frontend) - Flutter mobile application
+- 🖥️ [Vista-backend](https://github.com/shaowenfu/Vista_backend) - FastAPI backend server
+
+## 🗺️ Development Roadmap
+
+### Phase 1: Cloud-Based MVP
+- Basic scene understanding
+- Text recognition & reading
 - Voice-based interaction
 
-### Tech Stack
-- Frontend: Flutter
-- Backend: FastAPI
-- AI Services: GPT-4V, YOLO, Whisper, Edge TTS
+### Phase 2: Edge Computing Migration
+- Local AI inference
+- Reduced latency (~20ms)
+- Enhanced privacy protection
 
-### Project Structure
-```
-Vista-frontend/                # Flutter mobile application
-├── docs/                    # Documentation
-│   ├── architecture.md      # Frontend architecture
-│   └── mvp_plan.md         # MVP development plan
-├── lib/                     # Flutter source code
-│   ├── api/                # API client
-│   ├── models/             # Data models
-│   ├── screens/            # UI screens
-│   ├── services/           # Business logic
-│   └── widgets/            # Reusable widgets
-└── README.md               # Project documentation
+### Phase 3: Wearable Integration
+- Smart glasses integration
+- Haptic feedback system
+- Mesh network support
 
-Vista-backend/                # FastAPI backend server
-├── docs/                   # Documentation
-│   └── api.md             # API documentation
-├── app/                    # Application code
-│   ├── api/               # API endpoints
-│   ├── core/              # Core functionality
-│   ├── models/            # Data models
-│   └── services/          # Business services
-├── tests/                 # Test cases
-└── README.md              # Project documentation
-```
+## 🔬 Research Areas
 
-### Quick Links
-- [Frontend Documentation](https://github.com/yourusername/Vista-frontend)
-- [Backend Documentation](https://github.com/yourusername/Vista-backend)
-- [API Documentation](https://github.com/yourusername/Vista-backend/docs/api.md)
+- **Sensor Fusion**: Combining multiple sensor inputs for robust environmental perception
+- **Privacy Computing**: Federated learning and differential privacy protection
+- **Multimodal AI**: Cross-modal learning and understanding
+- **Edge Intelligence**: Distributed AI processing and optimization
 
-### Contributing
-We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting PRs.
+## 🤝 Contributing
 
-### License
+We welcome contributions from developers, researchers, and domain experts! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting PRs.
+
+## 📄 License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-<h2 id="中文">中文</h2>
+## 📚 Documentation
 
-## 项目概述
-VISTA是一个专门面向视障群体(BLV)的开源辅助技术项目，通过多模态AI技术帮助视障人士更好地感知和理解周围环境。
+- [Architecture Design](docs/architecture.md)
+- [Requirements Analysis](docs/requirements.md)
+- [API Documentation](https://github.com/shaowenfu/Vista_backend/docs/api.md)
 
-### 相关仓库
-- [Vista-frontend](https://github.com/yourusername/Vista-frontend) - Flutter移动应用
-- [Vista-backend](https://github.com/yourusername/Vista-backend) - FastAPI后端服务
+## 🌐 Community
 
-### 核心功能
-- 场景理解与描述
-- 文字识别与朗读
-- 物体检测与识别
-- 语音交互界面
-
-### 技术栈
-- 前端：Flutter
-- 后端：FastAPI
-- AI服务：GPT-4V、YOLO、Whisper、Edge TTS
-
-### 项目结构
+- [Discussion Forum](https://github.com/yourusername/VISTA/discussions)
+- [Issue Tracker](https://github.com/yourusername/VISTA/issues)
+- [Project Wiki](https://github.com/yourusername/VISTA/wiki)
 ```
-Vista-frontend/                # Flutter移动应用
-├── docs/                    # 文档
-│   ├── architecture.md      # 前端架构
-│   └── mvp_plan.md         # MVP开发计划
-├── lib/                     # Flutter源代码
-│   ├── api/                # API客户端
-│   ├── models/             # 数据模型
-│   ├── screens/            # 界面
-│   ├── services/           # 业务逻辑
-│   └── widgets/            # 可复用组件
-└── README.md               # 项目文档
-
-Vista-backend/                # FastAPI后端服务
-├── docs/                   # 文档
-│   └── api.md             # API文档
-├── app/                    # 应用代码
-│   ├── api/               # API端点
-│   ├── core/              # 核心功能
-│   ├── models/            # 数据模型
-│   └── services/          # 业务服务
-├── tests/                 # 测试用例
-└── README.md              # 项目文档
-```
-
-### 快速链接
-- [前端文档](https://github.com/yourusername/Vista-frontend)
-- [后端文档](https://github.com/yourusername/Vista-backend)
-- [API文档](https://github.com/yourusername/Vista-backend/docs/api.md)
-
-### 贡献指南
-我们欢迎各种形式的贡献！提交PR前请阅读[贡献指南](CONTRIBUTING.md)。
-
-### 开源协议
-本项目采用MIT协议 - 详见[LICENSE](LICENSE)文件。
