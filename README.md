@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>� VISTA</h1>
+  <h1>🔍 VISTA</h1>
   <p><strong>Visual Intelligence Support & Technical Assistant for BLV</strong></p>
   
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -109,20 +109,89 @@ graph TD
 
 ## 🗺️ Development Roadmap
 
-### Phase 1: Cloud-Based MVP
-- Basic scene understanding
-- Text recognition & reading
-- Voice-based interaction
+<table>
+<tr>
+<td width="33%">
+<h3>🌤️ Phase 1: Cloud Architecture</h3>
 
-### Phase 2: Edge Computing Migration
-- Local AI inference
-- Reduced latency (~20ms)
-- Enhanced privacy protection
+```mermaid
+graph TD
+    A[Mobile Client] <-->|WebSocket/HTTPS| B[Cloud Server]
+    B -->|AI Services| A
+```
 
-### Phase 3: Wearable Integration
-- Smart glasses integration
-- Haptic feedback system
-- Mesh network support
+**Core Components**
+- 📱 **Mobile App**
+  - Lightweight UI
+  - Real-time camera
+  - Audio I/O
+  - State management
+  - Network layer
+
+- ☁️ **Cloud Server**
+  - Vision analysis
+  - Speech processing
+  - Multimodal fusion
+  - Real-time processing
+
+**Communication**
+- WebSocket streaming
+- RESTful APIs
+- MQTT state sync
+</td>
+<td width="33%">
+<h3>🌥️ Phase 2: Edge Computing</h3>
+
+```mermaid
+graph TD
+    A[Mobile Client] <-->|Local Processing| B[Edge Module]
+    B <-->|Config & Updates| C[Cloud Server]
+```
+
+**Key Updates**
+- 🚀 Local AI inference
+- ⚡ Ultra-low latency (~10ms)
+- 🔒 Enhanced privacy
+- 📊 Bandwidth optimization
+- 💪 Improved reliability
+
+**Architecture Shift**
+- Edge AI deployment
+- Cloud management
+- Optimized protocols
+</td>
+<td width="33%">
+<h3>⛅ Phase 3: Wearable Integration</h3>
+
+```mermaid
+graph TD
+    A[Smart Glasses] <-->|Data Sync| B[Mobile Client]
+    B <-->|Processing| C[Edge Module]
+    C <-->|Management| D[Cloud Server]
+```
+
+**Innovations**
+- 🕶️ Smart glasses integration
+- 📡 Mesh networking
+- 🤝 Device synchronization
+- 🔄 Seamless updates
+- 🎯 Context awareness
+
+**Benefits**
+- Hands-free operation
+- Real-time assistance
+- Enhanced mobility
+</td>
+</tr>
+</table>
+
+### 📊 Performance Targets
+
+| Phase | Latency | Privacy | Reliability |
+|-------|---------|----------|------------|
+| Cloud | ~100ms | Standard | 90.9% |
+| Edge | ~10ms | Enhanced | 99.0% |
+| Wearable | ~5ms | Maximum | 99.999% |
 
 ## 🔬 Research Areas
 
@@ -141,13 +210,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📚 Documentation
 
-- [Architecture Design](docs/architecture.md)
-- [Requirements Analysis](docs/requirements.md)
+- [Architecture Design](https://github.com/shaowenfu/Vista/docs/architecture.md)
+- [Requirements Analysis](https://github.com/shaowenfu/Vista/docs/requirements.md)
 - [API Documentation](https://github.com/shaowenfu/Vista_backend/docs/api.md)
 
 ## 🌐 Community
 
-- [Discussion Forum](https://github.com/yourusername/VISTA/discussions)
-- [Issue Tracker](https://github.com/yourusername/VISTA/issues)
-- [Project Wiki](https://github.com/yourusername/VISTA/wiki)
+- [Discussion Forum](https://github.com/shaowenfu/Vista/discussions)
+- [Issue Tracker](https://github.com/shaowenfu/Vista/issues)
+- [Project Wiki](https://github.com/shaowenfu/Vista/wiki)
 ```
