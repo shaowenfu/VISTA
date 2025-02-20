@@ -111,8 +111,8 @@ graph TD
 
 <table>
 <tr>
-<td width="33%">
-<h3>🌤️ Phase 1: Cloud Architecture</h3>
+<td width="33%" valign="top">
+<h3>🌤️ Phase 1: Cloud Architecture（Current）</h3>
 
 ```mermaid
 graph TD
@@ -138,8 +138,9 @@ graph TD
 - WebSocket streaming
 - RESTful APIs
 - MQTT state sync
+
 </td>
-<td width="33%">
+<td width="33%" valign="top">
 <h3>🌥️ Phase 2: Edge Computing</h3>
 
 ```mermaid
@@ -160,7 +161,7 @@ graph TD
 - Cloud management
 - Optimized protocols
 </td>
-<td width="33%">
+<td width="33%" valign="top">
 <h3>⛅ Phase 3: Wearable Integration</h3>
 
 ```mermaid
@@ -185,13 +186,79 @@ graph TD
 </tr>
 </table>
 
-### 📊 Performance Targets
+<details>
+<summary>📊 Progress (25%)</summary>
 
-| Phase | Latency | Privacy | Reliability |
-|-------|---------|----------|------------|
-| Cloud | ~100ms | Standard | 90.9% |
-| Edge | ~10ms | Enhanced | 99.0% |
-| Wearable | ~5ms | Maximum | 99.999% |
+```mermaid
+gantt
+    title Phase 1 Progress
+    dateFormat  YYYY-MM-DD
+    section Framework
+    Basic Architecture    :done, 2025-02-20, 3d
+    section Features
+    Voice Interface      :active, 2025-02-21, 1d
+    Scene Understanding   :active, 2025-02-22, 1d
+    Text Recognition     :active, 2025-02-23, 1d
+```
+
+**Status**
+- ✅ Project initialization
+- ✅ Basic architecture setup
+- ✅ CI/CD pipeline
+- 🚧 Scene understanding module
+- ⏳ Text recognition system
+- ⏳ Voice interaction interface
+- ⏳ Real-time processing
+</details>
+
+### 📈 Overall Progress
+
+<table>
+<tr>
+<th>Phase</th>
+<th>Status</th>
+<th>Progress</th>
+<th>Timeline</th>
+</tr>
+<tr>
+<td>Cloud Architecture</td>
+<td>🚧 In Progress</td>
+<td>
+25%
+</td>
+<td>2025 Q1</td>
+</tr>
+<tr>
+<td>Edge Computing</td>
+<td>⏳ Planned</td>
+<td>
+0%
+</td>
+<td>2025 Q2</td>
+</tr>
+<tr>
+<td>Wearable Integration</td>
+<td>⏳ Planned</td>
+<td>
+0%
+</td>
+<td>2025 Q2</td>
+</tr>
+</table>
+
+### 🎯 Current Sprint Focus
+```mermaid
+timeline
+    title Sprint Goals (2025 Q1)
+    section Scene Understanding
+        Basic object detection
+        Environment mapping
+        Spatial relationships
+    section Infrastructure
+        Cloud deployment
+        API development
+        Testing framework
+```
 
 ## 🔬 Research Areas
 
@@ -219,4 +286,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Discussion Forum](https://github.com/shaowenfu/Vista/discussions)
 - [Issue Tracker](https://github.com/shaowenfu/Vista/issues)
 - [Project Wiki](https://github.com/shaowenfu/Vista/wiki)
-```

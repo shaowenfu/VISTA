@@ -113,8 +113,8 @@ graph TD
 
 <table>
 <tr>
-<td width="33%">
-<h3>🌤️ 第一阶段：云端架构</h3>
+<td width="33%" valign="top">
+<h3>🌤️ 第一阶段：云端架构（当前）</h3>
 
 ```mermaid
 graph TD
@@ -140,8 +140,9 @@ graph TD
 - WebSocket流传输
 - RESTful接口
 - MQTT状态同步
+
 </td>
-<td width="33%">
+<td width="33%" valign="top">
 <h3>🌥️ 第二阶段：边缘计算</h3>
 
 ```mermaid
@@ -162,7 +163,7 @@ graph TD
 - 云端管理
 - 协议优化
 </td>
-<td width="33%">
+<td width="33%" valign="top">
 <h3>⛅ 第三阶段：可穿戴整合</h3>
 
 ```mermaid
@@ -187,13 +188,79 @@ graph TD
 </tr>
 </table>
 
-### 📊 性能目标
+<details>
+<summary>📊 进度 (25%)</summary>
 
-| 阶段 | 延迟 | 隐私保护 | 可靠性 |
-|-------|---------|----------|------------|
-| 云端 | ~100ms | 标准 | 99.9% |
-| 边缘 | ~10ms | 增强 | 99.99% |
-| 可穿戴 | ~5ms | 最高 | 99.999% |
+```mermaid
+gantt
+    title 第一阶段进度
+    dateFormat  YYYY-MM-DD
+    section 框架搭建
+    基础架构    :done, 2025-02-20, 3d
+    section 功能开发
+    语音界面      :active, 2025-02-21, 1d
+    场景理解   :active, 2025-02-22, 1d
+    文字识别     :active, 2025-02-23, 1d
+```
+
+**当前状态**
+- ✅ 项目初始化
+- ✅ 基础架构搭建
+- ✅ CI/CD流程
+- 🚧 场景理解模块
+- ⏳ 文字识别系统
+- ⏳ 语音交互界面
+- ⏳ 实时处理系统
+</details>
+
+### 📈 总体进度
+
+<table>
+<tr>
+<th>阶段</th>
+<th>状态</th>
+<th>进度</th>
+<th>时间线</th>
+</tr>
+<tr>
+<td>云端架构</td>
+<td>🚧 进行中</td>
+<td>
+25%
+</td>
+<td>2025 Q1</td>
+</tr>
+<tr>
+<td>边缘计算</td>
+<td>⏳ 已规划</td>
+<td>
+0%
+</td>
+<td>2025 Q2</td>
+</tr>
+<tr>
+<td>可穿戴整合</td>
+<td>⏳ 已规划</td>
+<td>
+0%
+</td>
+<td>2025 Q2</td>
+</tr>
+</table>
+
+### 🎯 当前迭代重点
+```mermaid
+timeline
+    title 迭代目标 (2025 Q1)
+    section 场景理解
+        基础物体检测
+        环境建图
+        空间关系分析
+    section 基础设施
+        云端部署
+        API开发
+        测试框架
+```
 
 ## 🔬 研究领域
 
