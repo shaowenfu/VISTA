@@ -1,170 +1,170 @@
-# BLV助手 MVP设计方案
+# BLV Assistant MVP Design Plan
 
-## 一、MVP定位
+## I. MVP Positioning
 
-### 1. 核心价值主张
-为BLV人群提供基于多模态大模型的场景理解和交互辅助服务，帮助他们更好地感知和理解周围环境。
+### 1. Core Value Proposition
+Provide BLV individuals with scene understanding and interaction assistance services based on multimodal large models, helping them better perceive and understand their surroundings.
 
-### 2. 关键功能选择
-聚焦于最急迫且技术相对成熟的场景：
-- **场景理解与描述**：理解环境并提供语音反馈
-- **文字识别与朗读**：识别文本内容并语音播报
-- **简单物品识别**：识别日常物品并进行语音描述
+### 2. Key Feature Selection
+Focus on the most urgent and technically mature scenarios:
+- **Scene Understanding and Description**: Understand the environment and provide voice feedback
+- **Text Recognition and Reading**: Recognize text content and voice broadcast
+- **Simple Object Recognition**: Recognize daily objects and provide voice descriptions
 
-### 3. MVP目标
-1. 验证产品价值
-2. 获取用户反馈
-3. 测试技术可行性
-4. 为后续迭代打基础
+### 3. MVP Goals
+1. Validate product value
+2. Obtain user feedback
+3. Test technical feasibility
+4. Lay the foundation for subsequent iterations
 
-## 二、技术方案
+## II. Technical Solution
 
-### 1. 系统架构
+### 1. System Architecture
 ```plaintext
-移动端 App (Flutter)
+Mobile App (Flutter)
     ↓↑ 
-云服务 (FastAPI)
+Cloud Service (FastAPI)
     ↓↑
-AI 服务 (GPT-4V等)
+AI Service (GPT-4V, etc.)
 ```
 
-### 2. 核心技术栈
+### 2. Core Technology Stack
 
-#### 2.1 前端(Flutter)
-- 相机实时预览
-- 语音交互界面
-- WebSocket通信
-- 本地状态管理
+#### 2.1 Frontend (Flutter)
+- Camera real-time preview
+- Voice interaction interface
+- WebSocket communication
+- Local state management
 
-#### 2.2 后端(FastAPI)
-- 视频流处理
-- AI服务调用
-- WebSocket服务
-- 简单用户管理
+#### 2.2 Backend (FastAPI)
+- Video stream processing
+- AI service invocation
+- WebSocket service
+- Simple user management
 
-#### 2.3 AI能力
-- GPT-4V：场景理解
-- OCR：文字识别
-- YOLO：物体检测
-- Whisper：语音识别
-- Edge TTS：语音合成
+#### 2.3 AI Capabilities
+- GPT-4V: Scene understanding
+- OCR: Text recognition
+- YOLO: Object detection
+- Whisper: Speech recognition
+- Edge TTS: Speech synthesis
 
-## 三、功能设计
+## III. Feature Design
 
-### 1. 场景理解模式
+### 1. Scene Understanding Mode
 ```plaintext
-工作流程：
-1. 用户启动场景理解
-2. 实时捕获视频帧
-3. 调用GPT-4V分析场景
-4. 生成场景描述
-5. 转换为语音反馈
+Workflow:
+1. User initiates scene understanding
+2. Real-time video frame capture
+3. Call GPT-4V to analyze the scene
+4. Generate scene description
+5. Convert to voice feedback
 ```
 
-### 2. 文字识别模式
+### 2. Text Recognition Mode
 ```plaintext
-工作流程：
-1. 用户启动文字识别
-2. 捕获图像
-3. OCR提取文字
-4. 格式化处理
-5. 语音播报
+Workflow:
+1. User initiates text recognition
+2. Capture image
+3. OCR extracts text
+4. Format processing
+5. Voice broadcast
 ```
 
-### 3. 物品识别模式
+### 3. Object Recognition Mode
 ```plaintext
-工作流程：
-1. 用户启动物品识别
-2. 实时物体检测
-3. 目标物体分析
-4. 生成物品描述
-5. 语音反馈
+Workflow:
+1. User initiates object recognition
+2. Real-time object detection
+3. Target object analysis
+4. Generate object description
+5. Voice feedback
 ```
 
-### 4. 交互设计
-- 语音指令控制
-- 简单手势操作
-- 触摸辅助操作
-- 声音反馈机制
+### 4. Interaction Design
+- Voice command control
+- Simple gesture operation
+- Touch assistance operation
+- Sound feedback mechanism
 
-## 四、开发规划
+## IV. Development Plan
 
-### 1. 第一阶段（1天）：基础框架
-- 搭建Flutter项目框架
-- 实现相机和语音基础功能
-- 搭建后端服务
-- 完成AI服务对接
+### 1. Phase 1 (1 day): Basic Framework
+- Set up Flutter project framework
+- Implement basic camera and voice functions
+- Set up backend service
+- Complete AI service integration
 
-### 2. 第二阶段（2天）：核心功能
-- 实现场景理解功能
-- 完成文字识别功能
-- 开发物品识别功能
-- 优化语音交互体验
+### 2. Phase 2 (2 days): Core Features
+- Implement scene understanding function
+- Complete text recognition function
+- Develop object recognition function
+- Optimize voice interaction experience
 
-### 3. 第三阶段（1天）：优化打磨
-- 性能优化
-- 交互体验改进
-- Bug修复
-- 准备演示
+### 3. Phase 3 (1 day): Optimization and Polishing
+- Performance optimization
+- Interaction experience improvement
+- Bug fixing
+- Prepare for demonstration
 
-## 五、关键指标
+## V. Key Metrics
 
-### 1. 性能指标
-- 场景理解响应时间 < 2s
-- 文字识别准确率 > 90%
-- 物品识别准确率 > 85%
-- App启动时间 < 3s
+### 1. Performance Metrics
+- Scene understanding response time < 2s
+- Text recognition accuracy > 90%
+- Object recognition accuracy > 85%
+- App launch time < 3s
 
-### 2. 体验指标
-- 语音交互准确率 > 90%
-- 操作步骤 ≤ 3步
-- 无网络延迟感
-- 电池消耗合理
+### 2. Experience Metrics
+- Voice interaction accuracy > 90%
+- Operation steps ≤ 3
+- No network latency
+- Reasonable battery consumption
 
-## 六、后续扩展性
+## VI. Future Scalability
 
-### 1. 技术扩展
-- 边缘计算迁移准备
-- AI模型本地部署
-- 多模态融合架构
-- 实时性能优化
+### 1. Technical Scalability
+- Edge computing migration preparation
+- AI model local deployment
+- Multimodal fusion architecture
+- Real-time performance optimization
 
-### 2. 功能扩展
-- 导航功能集成
-- 社交功能接入
-- 个性化定制
-- 场景化应用
+### 2. Feature Scalability
+- Navigation function integration
+- Social function access
+- Personalized customization
+- Scenario-based applications
 
-## 七、演示重点
+## VII. Demonstration Highlights
 
-### 1. 核心场景展示
-- 室内场景理解
-- 文档阅读辅助
-- 物品识别分类
-- 语音交互体验
+### 1. Core Scene Demonstration
+- Indoor scene understanding
+- Document reading assistance
+- Object recognition and classification
+- Voice interaction experience
 
-### 2. 技术亮点
-- 多模态融合能力
-- 实时处理性能
-- 交互体验设计
-- 架构扩展性
+### 2. Technical Highlights
+- Multimodal fusion capability
+- Real-time processing performance
+- Interaction experience design
+- Architecture scalability
 
-### 3. 发展潜力
-- 技术进化路线
-- 产品规划愿景
-- 商业化可能性
-- 社会价值展现
+### 3. Development Potential
+- Technology evolution roadmap
+- Product planning vision
+- Commercialization possibilities
+- Social value demonstration
 
-## 八、风险管理
+## VIII. Risk Management
 
-### 1. 技术风险
-- AI服务稳定性
-- 网络延迟影响
-- 设备兼容性
-- 电池消耗问题
+### 1. Technical Risks
+- AI service stability
+- Network latency impact
+- Device compatibility
+- Battery consumption issues
 
-### 2. 应对策略
-- 备用服务方案
-- 离线功能支持
-- 广泛设备测试
-- 性能优化机制
+### 2. Mitigation Strategies
+- Backup service plan
+- Offline function support
+- Extensive device testing
+- Performance optimization mechanism

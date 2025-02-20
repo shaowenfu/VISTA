@@ -1,200 +1,189 @@
-# 需求分析
+# Requirements Analysis
 
-从BLV人群的实际需求角度深入思考需求：
+In-depth consideration of needs from the perspective of BLV (Blind and Low Vision) population:
 
-## BLV人群的主要挑战：
+## Main Challenges for BLV Population:
 
-### **一、物理环境交互挑战**
+### I. Physical Environment Interaction Challenges
 
-### **1. 导航与移动**
+#### 1. Navigation and Mobility
 
-- **动态障碍物**
-  - 临时停放的共享单车
-  - 未收起的垃圾桶
-  - 突然出现的儿童玩具
-  - 行人流动
+- **Dynamic Obstacles**
+  - Temporarily parked shared bikes
+  - Uncollected trash bins
+  - Suddenly appearing children's toys
+  - Pedestrian flow
 
-- **复杂地形**
-  - 无规律分布的工地围挡
-  - 未设警示的台阶
-  - 旋转门/闸机
-  - 门、电梯、楼梯等固定设施
+- **Complex Terrain**
+  - Irregularly distributed construction site barriers
+  - Steps without warning signs
+  - Revolving doors/turnstiles
+  - Fixed facilities like doors, elevators, and stairs
 
-- **空间认知**
-  - 大型商场/医院中的立体导航（如"3楼西北角第5诊室"）
-  - 室内外无缝导航
-  - 建筑内部布局理解
-  - 空间定位与记忆
+- **Spatial Cognition**
+  - 3D navigation in large malls/hospitals (e.g., "Room 5 in northwest corner of 3rd floor")
+  - Seamless indoor-outdoor navigation
+  - Understanding building layouts
+  - Spatial positioning and memory
 
-- **交通系统**
-  - 公交车号识别与站台定位
-  - 地铁换乘通道方向
-  - 网约车精准停靠
-  - 交通信号灯识别
-  - 实时路况预警
+- **Transportation Systems**
+  - Bus number recognition and station location
+  - Subway transfer channel directions
+  - Precise ride-hailing vehicle positioning
+  - Traffic light recognition
+  - Real-time traffic alerts
 
-- **环境感知**
-  - 风雨天气中听觉信号衰减
-  - 强光/反光导致的残余视力干扰
-  - 复杂环境中的方向感
-  - 天气变化的适应
+- **Environmental Perception**
+  - Auditory signal attenuation in rainy/windy weather
+  - Residual vision interference from strong light/reflections
+  - Sense of direction in complex environments
+  - Adaptation to weather changes
 
-**功能设计方向**：
+**Function Design Directions**:
+- Fusion perception of millimeter-wave radar + LiDAR (penetrating rain and fog)
+- 3D sound field navigation (different height layers distinguished by pitch)
+- Real-time scene modeling based on edge computing (predicting moving obstacle trajectories)
 
-- 毫米波雷达+LiDAR的融合感知（穿透雨雾）
-- 3D音场导航（不同高度层用音调区分）
-- 基于边缘计算的实时场景建模（预测移动障碍物轨迹）
+#### 2. Daily Object Manipulation
 
-### **2. 日常物品操作**
+- **Object Recognition**
+  - Distinguishing similar packaged medicines
+  - Banknote denomination recognition
+  - Tactile feedback for appliance buttons
+  - Food expiration date judgment
+  - Clothing color and pattern identification
 
-- **物品识别**
-  - 相似包装药品区分
-  - 纸币面额识别
-  - 家电按钮触觉反馈
-  - 食品保质期判断
-  - 衣物颜色和图案辨别
+- **Spatial Positioning**
+  - Memory of object positions on dining tables
+  - Tactile search for clothes deep in wardrobes
+  - Positioning and handling of daily items
+  - Adaptation to indoor item layouts
 
-- **空间定位**
-  - 餐桌上物品的位置记忆
-  - 衣柜深处衣物的触觉搜索
-  - 生活用品的定位与取放
-  - 室内物品布局适应
+- **Precision Operations**
+  - USB port alignment
+  - Threading needles
+  - Touchscreen operation of electronic devices
+  - Cooking and household chores
+  - Precise positioning and control
 
-- **精细操作**
-  - USB接口对准
-  - 针线穿引
-  - 电子设备触屏操作
-  - 烹饪和家务操作
-  - 精确定位与控制
+**Function Design Directions**:
+- Macro camera + tactile feedback gloves (object texture recognition)
+- Sonar spatial mapping (building object position database)
+- Augmented reality vibration guidance (indicating operation angles through bone conduction)
 
-**功能设计方向**：
+### II. Social Participation Barriers
 
-- 微距摄像头+触觉反馈手套（物品纹理识别）
-- 声呐空间测绘（建立物品位置数据库）
-- 增强现实震动指引（通过骨传导提示操作角度）
+#### 1. Non-Visual Social Interaction
 
-### **二、社会参与壁垒**
+- **Person Recognition**
+  - Recognizing the same person in different outfits
+  - Locating speakers in multi-person conversations
+  - Understanding facial expressions and body language
+  - Social distance perception
 
-### **1. 非视觉社交**
+- **Context Understanding**
+  - Accessing whiteboard content in meetings
+  - Understanding visual content presented by others
+  - Sensing group activity atmosphere
+  - Grasping non-verbal cues
 
-- **人际识别**
-  - 同一人不同装扮的识别
-  - 多人对话中的发言者定位
-  - 表情和肢体语言理解
-  - 社交距离感知
+- **Self-Expression**
+  - Confirming clothing coordination
+  - Managing facial expressions
+  - Adjusting social postures
+  - Participating in visual interactions
 
-- **情境理解**
-  - 会议白板内容获取
-  - 他人展示的视觉内容理解
-  - 群体活动氛围感知
-  - 非语言暗示的把握
+**Function Design Directions**:
+- Thermal imaging-assisted crowd counting and positioning
+- Real-time voice transcription + semantic enhancement (annotating non-verbal information like laughter/applause)
+- AI clothing coordination suggestions (identifying clothing tags via RFID)
 
-- **自我表达**
-  - 衣着搭配确认
-  - 面部表情管理
-  - 社交姿态调整
-  - 视觉互动参与
+#### 2. Information Access and Processing
 
-**功能设计方向**：
+- **Digital Content Access**
+  - Quick browsing of web content
+  - Graphical interface operation
+  - Multimedia content understanding
+  - Document format conversion
 
-- 热成像辅助的人数统计与定位
-- 实时语音转录+语义增强（标注笑声/掌声等非语言信息）
-- 穿着搭配AI建议（通过RFID识别衣物标签）
+- **Educational Resource Usage**
+  - Understanding textbook content
+  - Interpreting chart data
+  - Participating in online courses
+  - Tracking learning progress
 
-### **2. 信息获取与处理**
+- **Vocational Skill Adaptation**
+  - Using office software
+  - Participating in remote meetings
+  - Document processing and management
+  - Professional skill training
 
-- **数字内容访问**
-  - 网页内容快速浏览
-  - 图形界面操作
-  - 多媒体内容理解
-  - 文档格式转换
+**Function Design Directions**:
+- Edge computing privacy protection (local processing of biometric features)
+- Ultrasonic positioning guidance (millimeter-level operation guidance)
+- Augmented reality overlay (projecting virtual operation interfaces on real objects)
 
-- **教育资源使用**
-  - 教材内容理解
-  - 图表数据解读
-  - 在线课程参与
-  - 学习进度跟踪
+#### 3. Health and Medical Care
 
-- **职业技能适应**
-  - 办公软件使用
-  - 远程会议参与
-  - 文档处理与管理
-  - 专业技能培训
+- **Medical Service Access**
+  - Understanding medical information
+  - Viewing test reports
+  - Navigating medical procedures
+  - Emergency assistance
 
-**功能设计方向**：
+- **Health Management**
+  - Medication guidance and reminders
+  - Rehabilitation training assistance
+  - Health status monitoring
+  - Exercise posture correction
 
-- 边缘计算隐私保护（本地处理生物特征）
-- 超声波定位引导（精确到毫米级的操作指引）
-- 增强现实叠层（在真实物体上投影虚拟操作界面）
+### III. Cognitive and Information Gap
 
-### **3. 健康与医疗**
+#### 1. Graphical Information Black Hole
 
-- **医疗服务获取**
-  - 医疗信息理解
-  - 检验报告查看
-  - 就医流程导航
-  - 紧急求助
+- **Data Visualization**: Stock K-line charts, weather forecast cloud maps, mathematical geometry diagrams
+- **Cultural Symbols**: Icon metaphors in religious places, abstract expressions of traffic signs
+- **Art Appreciation**: Light and shadow layers in paintings, brush stroke strength in calligraphy works
 
-- **健康管理**
-  - 用药指导与提醒
-  - 康复训练辅助
-  - 健康状况监测
-  - 运动姿势纠正
+**Function Design Directions**:
+- Topological structure description algorithm (converting graphics into touchable vibration codes)
+- Multi-modal rendering engine (using temperature changes to represent color brightness)
+- Cultural symbol knowledge graph (semantic interpretation combined with scenes)
 
-### **三、认知与信息鸿沟**
+#### 2. Real-time Information Delay
 
-### **1. 图形信息黑洞**
+- **Instant Prompts**: Traffic light countdowns, time-limited discount QR codes, temporary road closure notices
+- **Dynamic Information**: Live sports scores, stock market fluctuations, shared screens in online meetings
 
-- **数据可视化**：股票K线图、天气预报云图、数学几何图形
-- **文化符号**：宗教场所的图标隐喻、交通标志的抽象表达
-- **艺术鉴赏**：绘画的光影层次、书法作品的笔触力度
-
-**功能设计方向**：
-
-- 拓扑结构描述算法（将图形转化为可触摸的震动编码）
-- 多模态渲染引擎（用温度变化表现色彩明暗）
-- 文化符号知识图谱（结合场景的语义解释）
-
-### **2. 实时信息延迟**
-
-- **瞬时提示**：红绿灯倒计时、限时优惠二维码、临时封路告示
-- **动态信息**：体育赛事即时比分、股市波动、在线会议共享屏幕
-
-**功能设计方向**：
-
-- 5G边缘计算节点部署（100ms级响应）
-- 差分信息提取技术（仅传输变化数据）
-- 情境感知优先级排序（自动过滤无关信息）
+**Function Design Directions**:
+- 5G edge computing node deployment (100ms level response)
+- Differential information extraction technology (only transmitting changed data)
+- Context-aware priority sorting (automatically filtering irrelevant information)
 
 ---
 
-### **四、特殊场景困境**
+### IV. Special Scenario Dilemmas
 
-### **1. 医疗健康**
+#### 1. Medical Health
 
-- **体征监测**：无法查看血糖仪数值、皮肤病变位置自检
-- **用药安全**：相似药片混淆、注射剂量刻度读取
-- **康复训练**：瑜伽动作矫正、理疗器械操作引导
+- **Vital Sign Monitoring**: Unable to view glucometer values, self-checking skin lesion locations
+- **Medication Safety**: Confusing similar pills, reading injection dose scales
+- **Rehabilitation Training**: Yoga posture correction, physiotherapy equipment operation guidance
 
-**功能设计方向**：
+**Function Design Directions**:
+- Subcutaneous implant sensors + epidermal vibration feedback
+- Drug molecule spectrum recognition
+- Sports mechanics modeling and real-time correction
 
-- 皮下植入传感器+表皮震动反馈
-- 药物分子光谱识别
-- 运动力学建模与实时纠偏
+#### 2. Emergency Avoidance
 
-### **2. 紧急避险**
+- **Sudden Disasters**: Earthquake escape route planning, direction identification in fire smoke
+- **Human-made Dangers**: Robbery warnings, accident liability determination assistance
+- **Health Crises**: Stroke symptom recognition, rapid allergen detection
 
-- **突发灾害**：地震逃生路径规划、火灾浓烟中的方向辨识
-- **人为危险**：抢劫预警、交通事故责任认定辅助
-- **健康危机**：中风征兆识别、过敏源快速检测
-
-**功能设计方向**：
-
-- 多传感器威胁评估矩阵（综合空气质量/震动/声波等参数）
-- 应急通讯中继模式（断网环境下的设备间组网）
-- 法律事实链自动记录（加密存储事件前后3分钟环境数据）
+**Function Design Directions**:
+- Multi-sensor threat assessment matrix (integrating air quality/vibration/sound wave parameters)
+- Emergency communication relay mode (device networking in disconnected environments)
+- Legal fact chain automatic recording (encrypted storage of environmental data 3 minutes before and after events)
 
 ---
-
-
-

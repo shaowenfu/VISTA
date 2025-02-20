@@ -1,710 +1,703 @@
-# 功能设计
+# Feature Design
 
-## 核心技术流程
+## Core Technical Processes
 
-### 1. **场景感知系统**
+### 1. **Scene Perception System**
 ```plaintext
-1.1 视觉识别引擎
-    - 目标检测与追踪
-    - 场景语义分割
-    - OCR文字识别
-    - 人脸/表情识别
-    - 手势识别
+1.1 Visual Recognition Engine
+    - Object Detection and Tracking
+    - Scene Semantic Segmentation
+    - OCR Text Recognition
+    - Face/Expression Recognition
+    - Gesture Recognition
 
-1.2 多模态传感
-    - 深度信息获取
-    - 惯性数据采集
-    - 音频空间定位
-    - 环境参数检测
+1.2 Multi-modal Sensing
+    - Depth Information Acquisition
+    - Inertial Data Collection
+    - Audio Spatial Localization
+    - Environmental Parameter Detection
 
-1.3 数据预处理
-    - 图像增强与矫正
-    - 噪声过滤
-    - 特征提取
-    - 数据标准化
+1.3 Data Preprocessing
+    - Image Enhancement and Correction
+    - Noise Filtering
+    - Feature Extraction
+    - Data Standardization
 ```
 
-### 2. **智能推理系统**
+### 2. **Intelligent Reasoning System**
 ```plaintext
-2.1 场景理解
-    - 空间关系分析
-    - 物体属性识别
-    - 动作意图理解
-    - 上下文关联
+2.1 Scene Understanding
+    - Spatial Relationship Analysis
+    - Object Attribute Recognition
+    - Action Intention Understanding
+    - Context Association
 
-2.2 多模态融合
-    - 视觉-语言对齐
-    - 空间-语义映射
-    - 多源信息整合
-    - 时序关系推理
+2.2 Multi-modal Fusion
+    - Vision-Language Alignment
+    - Spatial-Semantic Mapping
+    - Multi-source Information Integration
+    - Temporal Relationship Reasoning
 
-2.3 决策生成
-    - 风险评估
-    - 路径规划
-    - 行为建议
-    - 任务分解
+2.3 Decision Generation
+    - Risk Assessment
+    - Path Planning
+    - Behavior Suggestion
+    - Task Decomposition
 ```
 
-### 3. **交互反馈系统**
+### 3. **Interactive Feedback System**
 ```plaintext
-3.1 语音交互
-    - 语音指令识别
-    - 自然语言理解
-    - 上下文对话
-    - 语音合成输出
+3.1 Voice Interaction
+    - Voice Command Recognition
+    - Natural Language Understanding
+    - Contextual Dialogue
+    - Speech Synthesis Output
 
-3.2 触觉反馈
-    - 方向振动提示
-    - 距离强度映射
-    - 警告信号生成
-    - 操作确认反馈
+3.2 Haptic Feedback
+    - Directional Vibration Cues
+    - Distance Intensity Mapping
+    - Warning Signal Generation
+    - Operation Confirmation Feedback
 
-3.3 多模态输出
-    - 语音-触觉协同
-    - 优先级动态调整
-    - 反馈强度控制
-    - 场景化提示
+3.3 Multi-modal Output
+    - Voice-Haptic Coordination
+    - Priority Dynamic Adjustment
+    - Feedback Intensity Control
+    - Contextual Cues
 ```
 
-### 4. **任务执行系统**
+### 4. **Task Execution System**
 ```plaintext
-4.1 任务规划
-    - 目标分解
-    - 步骤排序
-    - 依赖分析
-    - 资源调度
+4.1 Task Planning
+    - Goal Decomposition
+    - Step Sequencing
+    - Dependency Analysis
+    - Resource Scheduling
 
-4.2 执行监控
-    - 进度跟踪
-    - 异常检测
-    - 实时调整
-    - 结果验证
+4.2 Execution Monitoring
+    - Progress Tracking
+    - Anomaly Detection
+    - Real-time Adjustment
+    - Result Verification
 
-4.3 反馈优化
-    - 用户行为分析
-    - 效果评估
-    - 模型更新
-    - 策略调整
+4.3 Feedback Optimization
+    - User Behavior Analysis
+    - Effect Evaluation
+    - Model Update
+    - Strategy Adjustment
 ```
 
-## 技术实现方案
+## Technical Implementation Plan
 
-### 1. **感知层**
-- 视觉模型：YOLOv8 + Segment Anything
-- 深度估计：MiDaS
-- OCR引擎：PaddleOCR
-- 人脸识别：ArcFace
-- 传感器融合：卡尔曼滤波
+### 1. **Perception Layer**
+- Vision Models: YOLOv8 + Segment Anything
+- Depth Estimation: MiDaS
+- OCR Engine: PaddleOCR
+- Face Recognition: ArcFace
+- Sensor Fusion: Kalman Filter
 
-### 2. **推理层**
-- 场景理解：GPT-4V
-- 空间分析：3D场景图
-- 决策系统：规则引擎 + LLM
-- 知识图谱：Neo4j
+### 2. **Reasoning Layer**
+- Scene Understanding: GPT-4V
+- Spatial Analysis: 3D Scene Graph
+- Decision System: Rule Engine + LLM
+- Knowledge Graph: Neo4j
 
-### 3. **交互层**
-- 语音识别：Whisper
-- 语音合成：Edge TTS
-- 对话管理：基于状态机
-- 触觉反馈：振动模式库
+### 3. **Interaction Layer**
+- Speech Recognition: Whisper
+- Speech Synthesis: Edge TTS
+- Dialogue Management: State Machine Based
+- Haptic Feedback: Vibration Pattern Library
 
-### 4. **执行层**
-- 任务管理：有限状态机
-- 进度追踪：事件驱动
-- 异常处理：故障树分析
-- 数据记录：时序数据库
+### 4. **Execution Layer**
+- Task Management: Finite State Machine
+- Progress Tracking: Event-driven
+- Exception Handling: Fault Tree Analysis
+- Data Recording: Time Series Database
 
-## 系统集成流程
+## System Integration Process
 
-1. **输入阶段**
+1. **Input Phase**
 ```plaintext
-视觉/传感器数据采集 → 预处理 → 特征提取
+Visual/Sensor Data Acquisition → Preprocessing → Feature Extraction
 ```
 
-2. **处理阶段**
+2. **Processing Phase**
 ```plaintext
-特征分析 → 场景理解 → 决策生成 → 任务规划
+Feature Analysis → Scene Understanding → Decision Generation → Task Planning
 ```
 
-3. **输出阶段**
+3. **Output Phase**
 ```plaintext
-反馈生成 → 多模态协同 → 执行监控 → 效果评估
+Feedback Generation → Multi-modal Coordination → Execution Monitoring → Effect Evaluation
 ```
 
-## 优化策略
+## Optimization Strategies
 
-1. **性能优化**
-- 模型量化压缩
-- 边缘计算分流
-- 计算资源调度
-- 缓存机制优化
+1. **Performance Optimization**
+- Model Quantization and Compression
+- Edge Computing Offloading
+- Computational Resource Scheduling
+- Cache Mechanism Optimization
 
-2. **可靠性保障**
-- 多源数据验证
-- 降级服务方案
-- 异常恢复机制
-- 关键数据备份
+2. **Reliability Assurance**
+- Multi-source Data Verification
+- Degraded Service Plan
+- Exception Recovery Mechanism
+- Critical Data Backup
 
-3. **实时性保证**
-- 流水线并行处理
-- 优先级任务调度
-- 延迟监控预警
-- 负载均衡控制
+3. **Real-time Guarantee**
+- Pipeline Parallel Processing
+- Priority Task Scheduling
+- Latency Monitoring and Alerting
+- Load Balancing Control
 
-# 技术选型
+# Technology Selection
 
-## 1. 架构模式
+## 1. Architecture Patterns
 
-### 1.1 分层架构(Layered Architecture)
-
+### 1.1 Layered Architecture
 ```plaintext
-感知层 → 推理层 → 交互层 → 执行层
+Perception Layer → Reasoning Layer → Interaction Layer → Execution Layer
     ↑         ↑         ↑         ↑
     └─────────┴─────────┴─────────┘
-        事件总线(Event Bus)
+         Event Bus
 ```
 
-**垂直分层**：
-- 感知层：负责数据采集和预处理
-- 推理层：负责数据分析和决策生成
-- 交互层：负责用户交互和反馈
-- 执行层：负责任务执行和监控
+**Vertical Layering**:
+- Perception Layer: Responsible for data acquisition and preprocessing
+- Reasoning Layer: Responsible for data analysis and decision generation
+- Interaction Layer: Responsible for user interaction and feedback
+- Execution Layer: Responsible for task execution and monitoring
 
-**技术实现**：
-1. 感知层
-   - 自研关键帧提取算法
-   - YOLOv8 + Segment Anything：视觉识别
-   - MiDaS：深度估计
-   - PaddleOCR：文字识别
-   - ArcFace：人脸识别
-   - 卡尔曼滤波：传感器融合
+**Technical Implementation**:
+1. Perception Layer
+   - Self-developed Key Frame Extraction Algorithm
+   - YOLOv8 + Segment Anything: Visual Recognition
+   - MiDaS: Depth Estimation
+   - PaddleOCR: Text Recognition
+   - ArcFace: Face Recognition
+   - Kalman Filter: Sensor Fusion
 
-2. 推理层
-   - GPT-4V或者其它多模态模型：场景理解和决策
-   - 3D场景图：空间分析
-   - 规则引擎 + LLM：决策系统
-   - Neo4j：知识图谱
+2. Reasoning Layer
+   - GPT-4V or Other Multi-modal Models: Scene Understanding and Decision Making
+   - 3D Scene Graph: Spatial Analysis
+   - Rule Engine + LLM: Decision System
+   - Neo4j: Knowledge Graph
 
-3. 交互层
-   - Whisper：语音识别
-   - Edge TTS：语音合成
-   - 状态机：对话管理
-   - 振动模式库：触觉反馈
+3. Interaction Layer
+   - Whisper: Speech Recognition
+   - Edge TTS: Speech Synthesis
+   - State Machine: Dialogue Management
+   - Vibration Pattern Library: Haptic Feedback
 
-4. 执行层
-   - 有限状态机：任务管理
-   - 事件驱动：进度追踪
-   - 故障树：异常处理
-   - 时序数据库：数据记录
+4. Execution Layer
+   - Finite State Machine: Task Management
+   - Event-driven: Progress Tracking
+   - Fault Tree: Exception Handling
+   - Time Series Database: Data Recording
 
-### 1.2 事件驱动架构(Event-Driven Architecture)
-
+### 1.2 Event-Driven Architecture
 ```plaintext
-事件源 → 事件总线 → 事件处理器 → 状态更新
+Event Source → Event Bus → Event Handler → State Update
   ↑                                   |
   └───────────────────────────────────┘
 ```
 
-**横向流转**：
-1. 事件源
-   - 视觉输入事件
-   - 语音命令事件
-   - 传感器数据事件
-   - 系统状态事件
+**Horizontal Flow**:
+1. Event Source
+   - Visual Input Events
+   - Voice Command Events
+   - Sensor Data Events
+   - System State Events
 
-2. 事件总线
-   - 事件路由和分发
-   - 事件过滤和优先级
-   - 事件缓存和重放
-   - 事件持久化
+2. Event Bus
+   - Event Routing and Distribution
+   - Event Filtering and Prioritization
+   - Event Caching and Replay
+   - Event Persistence
 
-3. 事件处理器
-   - 场景理解处理器
-   - 导航处理器
-   - 交互处理器
-   - 任务处理器
+3. Event Handler
+   - Scene Understanding Handler
+   - Navigation Handler
+   - Interaction Handler
+   - Task Handler
 
-4. 状态更新
-   - 系统状态更新
-   - 用户状态更新
-   - 环境状态更新
-   - 任务状态更新
+4. State Update
+   - System State Update
+   - User State Update
+   - Environment State Update
+   - Task State Update
 
-### 1.3 架构协同
-
+### 1.3 Architecture Coordination
 ```plaintext
-分层架构处理"垂直"功能职责：
-感知层 → 数据采集和预处理
-推理层 → 分析和决策
-交互层 → 用户交互
-执行层 → 任务执行
+Layered Architecture handles "vertical" functional responsibilities:
+Perception Layer → Data Acquisition and Preprocessing
+Reasoning Layer → Analysis and Decision Making
+Interaction Layer → User Interaction
+Execution Layer → Task Execution
 
-事件驱动处理"横向"数据流转：
-事件源 → 事件总线 → 处理器 → 状态更新
+Event-Driven Architecture handles "horizontal" data flow:
+Event Source → Event Bus → Handler → State Update
 ```
 
-**工作流程示例**：
-1. 摄像头捕获到障碍物（感知层产生事件）
-2. 事件总线将事件路由到场景理解处理器
-3. 推理层分析障碍物风险并生成决策
-4. 交互层接收决策事件并生成用户提醒
-5. 执行层更新系统状态并监控后续变化
+**Workflow Example**:
+1. Camera detects obstacle (Perception Layer generates event)
+2. Event Bus routes event to Scene Understanding Handler
+3. Reasoning Layer analyzes obstacle risk and generates decision
+4. Interaction Layer receives decision event and generates user alert
+5. Execution Layer updates system state and monitors subsequent changes
 
-## 2.技术架构演进路线
+## 2. Technology Architecture Evolution Path
 
-### 1. 第一阶段：云服务器部署架构
-
+### 1. First Phase: Cloud Server Deployment Architecture
 ```markdown
-客户端(Flutter App)
+Client(Flutter App)
     ↓↑ WebSocket/HTTPS
-云服务器(AI服务)
+Cloud Server(AI Services)
 ```
-**核心架构**
-- 前端：Flutter移动应用
-  - 轻量级UI渲染
-  - 相机实时预览
-  - 音频采集与播放
-  - 本地状态管理
-  - 网络通信模块
+**Core Architecture**
+- Frontend: Flutter Mobile App
+  - Lightweight UI Rendering
+  - Camera Real-time Preview
+  - Audio Capture and Playback
+  - Local State Management
+  - Network Communication Module
 
-- 后端：云服务器
-  - 视觉分析服务(目标检测、场景理解)
-  - 语音处理服务(ASR、TTS)
-  - 多模态融合服务(视觉-语言理解)
-  - 实时数据处理
-  - 状态同步
+- Backend: Cloud Server
+  - Visual Analysis Service (Object Detection, Scene Understanding)
+  - Speech Processing Service (ASR, TTS)
+  - Multi-modal Fusion Service (Vision-Language Understanding)
+  - Real-time Data Processing
+  - State Synchronization
 
-**通信方案**
-- WebSocket用于实时视频流传输
-- HTTPS RESTful API用于配置和控制
-- MQTT用于状态同步
+**Communication Solution**
+- WebSocket for real-time video stream transmission
+- HTTPS RESTful API for configuration and control
+- MQTT for state synchronization
 
-### 2. 第二阶段：边缘计算迁移
-
+### 2. Second Phase: Edge Computing Migration
 ```markdown
-客户端(Flutter App) ←→ 边缘计算模块
+Client(Flutter App) ←→ Edge Computing Module
                      ↓↑ 
-              云服务器(配置&更新)
+               Cloud Server(Configuration & Updates)
 ```  
 
-**架构调整**
-- 将AI推理服务从云端迁移到边缘设备
-- 保持云端配置管理和模型更新
-- 优化通信协议，减少延迟
+**Architecture Adjustment**
+- Migrate AI inference services from cloud to edge devices
+- Maintain cloud configuration management and model updates
+- Optimize communication protocols to reduce latency
 
-**边缘部署优势**
-- 降低延迟(~10ms)
-- 提高隐私安全
-- 减少带宽占用
-- 提升可靠性
+**Edge Deployment Advantages**
+- Reduce latency (~10ms)
+- Improve privacy and security
+- Reduce bandwidth usage
+- Enhance reliability
 
-### 3. 第三阶段：可穿戴设备整合
-
+### 3. Third Phase: Wearable Device Integration
 ```markdown
-客户端（Flutter App） ←→ 智能眼镜/可穿戴设备
+Client (Flutter App) ←→ Smart Glasses/Wearable Devices
                      ↓↑ 
-              边缘计算模块(AI引擎)
+               Edge Computing Module (AI Engine)
                      ↓↑ 
-              云服务器(管理&升级)
+               Cloud Server (Management & Upgrades)
 ```
-- 使用可穿戴设备，可以减少对手机的依赖，同时可以更方便的进行数据同步和更新。
+- Using wearable devices can reduce dependence on mobile phones while enabling more convenient data synchronization and updates.
 
-## 2. 客户端（移动APP/可穿戴设备）
+## 2. Client (Mobile App/Wearable Devices)
 
-### 2.1 技术栈
-- Flutter：跨平台开发框架
-- WebSocket：实时通信
-- SQLite：本地缓存
-- TensorFlow Lite：边缘推理
+### 2.1 Technology Stack
+- Flutter: Cross-platform Development Framework
+- WebSocket: Real-time Communication
+- SQLite: Local Cache
+- TensorFlow Lite: Edge Inference
 
-### 2.2 职责分工
+### 2.2 Responsibility Division
 
-**感知层**
+**Perception Layer**
 ```plaintext
-- 相机实时预览和关键帧提取
-- 传感器数据采集(IMU、GPS等)
-- 音频采集和预处理
-- 本地数据缓存
+- Camera Real-time Preview and Key Frame Extraction
+- Sensor Data Collection (IMU, GPS, etc.)
+- Audio Capture and Preprocessing
+- Local Data Caching
 ```
 
-**推理层**（边缘计算模式）
+**Reasoning Layer** (Edge Computing Mode)
 ```plaintext
-- 轻量级目标检测(TFLite)
-- 基础OCR识别
-- 简单手势识别
-- 本地场景分类
+- Lightweight Object Detection (TFLite)
+- Basic OCR Recognition
+- Simple Gesture Recognition
+- Local Scene Classification
 ```
 
-**交互层**
+**Interaction Layer**
 ```plaintext
-- UI渲染和状态管理
-- 语音指令识别
-- 触觉反馈控制
-- 用户操作响应
+- UI Rendering and State Management
+- Voice Command Recognition
+- Haptic Feedback Control
+- User Operation Response
 ```
 
-**执行层**
+**Execution Layer**
 ```plaintext
-- 本地任务调度
-- 状态机管理
-- 离线功能支持
-- 数据同步控制
+- Local Task Scheduling
+- State Machine Management
+- Offline Function Support
+- Data Synchronization Control
 ```
 
-## 3. 后端（云服务器/边缘计算）
+## 3. Backend (Cloud Server/Edge Computing)
 
-### 3.1 技术栈
-- FastAPI：Web框架
-- PostgreSQL：关系数据库
-- Redis：缓存和消息队列
-- Docker：容器化部署
+### 3.1 Technology Stack
+- FastAPI: Web Framework
+- PostgreSQL: Relational Database
+- Redis: Cache and Message Queue
+- Docker: Containerized Deployment
 
-### 3.2 服务架构
+### 3.2 Service Architecture
 
-**Vision[视觉服务]**
+**Vision[Visual Service]**
 ```plaintext
-感知层：
-- 视频流处理
-- 图像增强和预处理
-- 特征提取
+Perception Layer:
+- Video Stream Processing
+- Image Enhancement and Preprocessing
+- Feature Extraction
 
-推理层：
-- YOLOv8目标检测
-- Segment Anything场景分割
-- GPT-4V场景理解
+Reasoning Layer:
+- YOLOv8 Object Detection
+- Segment Anything Scene Segmentation
+- GPT-4V Scene Understanding
 ```
 
-**Voice[语音服务]**
+**Voice[Speech Service]**
 ```plaintext
-感知层：
-- 音频流处理
-- 噪声消除
-- 特征提取
+Perception Layer:
+- Audio Stream Processing
+- Noise Cancellation
+- Feature Extraction
 
-推理层：
-- Whisper语音识别
-- Edge TTS语音合成
-- 语义理解和对话管理
+Reasoning Layer:
+- Whisper Speech Recognition
+- Edge TTS Speech Synthesis
+- Semantic Understanding and Dialogue Management
 ```
 
-**Navigation[导航服务]**
+**Navigation[Navigation Service]**
 ```plaintext
-推理层：
-- 3D场景重建
-- 路径规划算法
-- 空间关系分析
+Reasoning Layer:
+- 3D Scene Reconstruction
+- Path Planning Algorithm
+- Spatial Relationship Analysis
 
-执行层：
-- 导航指令生成
-- 实时位置追踪
-- 障碍物预警
+Execution Layer:
+- Navigation Instruction Generation
+- Real-time Location Tracking
+- Obstacle Warning
 ```
 
-**Storage[存储服务]**
+**Storage[Storage Service]**
 ```plaintext
-执行层：
-- 用户数据管理
-- 模型版本控制
-- 系统配置存储
-- 日志和监控
+Execution Layer:
+- User Data Management
+- Model Version Control
+- System Configuration Storage
+- Logging and Monitoring
 ```
 
-### 3.3 部署策略
+### 3.3 Deployment Strategy
 
-**第一阶段：云端部署**
-- 所有AI推理在云端进行
-- 客户端只负责数据采集和展示
-- 通过WebSocket实现实时通信
+**First Phase: Cloud Deployment**
+- All AI inference performed in the cloud
+- Client only responsible for data collection and display
+- Real-time communication via WebSocket
 
-**第二阶段：边缘计算**
+**Second Phase: Edge Computing**
 ```plaintext
-客户端承担：
-- 基础目标检测
-- 简单文字识别
-- 实时手势识别
+Client Responsibilities:
+- Basic Object Detection
+- Simple Text Recognition
+- Real-time Gesture Recognition
 
-云端保留：
-- 复杂场景理解
-- 大模型推理
-- 全局状态管理
+Cloud Responsibilities:
+- Complex Scene Understanding
+- Large Model Inference
+- Global State Management
 ```
 
-**第三阶段：可穿戴设备**
+**Third Phase: Wearable Devices**
 ```plaintext
-可穿戴设备承担：
-- 实时数据采集
-- 基础特征提取
-- 触觉反馈控制
+Wearable Device Responsibilities:
+- Real-time Data Collection
+- Basic Feature Extraction
+- Haptic Feedback Control
 
-边缘计算承担：
-- 本地AI推理
-- 状态管理
-- 任务调度
+Edge Computing Responsibilities:
+- Local AI Inference
+- State Management
+- Task Scheduling
 
-云端专注：
-- 模型更新
-- 数据分析
-- 全局优化
+Cloud Focus:
+- Model Updates
+- Data Analysis
+- Global Optimization
 ```
 
-### 3.4 通信机制
+### 3.4 Communication Mechanism
 
-- WebSocket：视频流和实时数据
-- REST API：配置和控制
-- MQTT：状态同步和事件通知
-- gRPC：服务间通信
+- WebSocket: Video Stream and Real-time Data
+- REST API: Configuration and Control
+- MQTT: State Synchronization and Event Notification
+- gRPC: Inter-service Communication
 
-## 4. 感知系统架构
+## 4. Perception System Architecture
 
-### 4.1 多模态传感器融合
+### 4.1 Multi-modal Sensor Fusion
 
-- 毫米波雷达 + LiDAR
-  - 穿透性强，适用于恶劣天气
-  - 精确距离测量
-  - 动态物体追踪
+- Millimeter Wave Radar + LiDAR
+  - Strong Penetration, Suitable for Harsh Weather
+  - Precise Distance Measurement
+  - Dynamic Object Tracking
 
-- 3D音场定位系统
-  - 空间音频导航
-  - 声源定位
-  - 环境声学特征提取
+- 3D Sound Field Localization System
+  - Spatial Audio Navigation
+  - Sound Source Localization
+  - Environmental Acoustic Feature Extraction
 
-- 触觉反馈系统
-  - 精确振动模式
-  - 压力分布感知
-  - 材质识别
+- Haptic Feedback System
+  - Precise Vibration Patterns
+  - Pressure Distribution Perception
+  - Material Recognition
 
-### 4.2 环境智能体系统
+### 4.2 Environmental Intelligence System
 
-- 分布式传感网络
-  - 室内定位信标
-  - 环境参数监测
-  - 紧急情况感知
+- Distributed Sensor Network
+  - Indoor Positioning Beacons
+  - Environmental Parameter Monitoring
+  - Emergency Situation Perception
 
-- 边缘计算节点
-  - 实时场景重建
-  - 轨迹预测
-  - 危险评估
+- Edge Computing Nodes
+  - Real-time Scene Reconstruction
+  - Trajectory Prediction
+  - Risk Assessment
 
-## 5. 安全与隐私保护
+## 5. Security and Privacy Protection
 
-### 5.1 数据安全架构
+### 5.1 Data Security Architecture
 
-- 联邦学习框架
-  - 本地模型训练
-  - 差分隐私保护
-  - 去中心化学习
+- Federated Learning Framework
+  - Local Model Training
+  - Differential Privacy Protection
+  - Decentralized Learning
 
-- 数据加密系统
-  - 端到端加密
-  - 生物特征保护
-  - 匿名化处理
+- Data Encryption System
+  - End-to-end Encryption
+  - Biometric Protection
+  - Anonymization Processing
 
-### 5.2 应急响应机制
+### 5.2 Emergency Response Mechanism
 
-- 威胁评估系统
-  - 多源数据融合
-  - 实时风险评估
-  - 预警触发机制
+- Threat Assessment System
+  - Multi-source Data Fusion
+  - Real-time Risk Assessment
+  - Early Warning Trigger Mechanism
 
-- 应急通信网络
-  - mesh网络自组织
-  - 断网应急模式
-  - 加密事件记录
+- Emergency Communication Network
+  - Mesh Network Self-organization
+  - Offline Emergency Mode
+  - Encrypted Event Logging
 
-## 6. 通信协议  
-
+## 6. Communication Protocols  
 - WebSocket
 - REST API
 
-## 7. 关键技术指标
+## 7. Key Technical Indicators
 
-### 7.1 性能指标
+### 7.1 Performance Indicators
 
-- 端到端延迟 < 100ms (云端)
-- 端到端延迟 < 20ms (边缘)
-- 视频流帧率 > 15fps
-- 识别准确率 > 90%
+- End-to-end Latency < 100ms (Cloud)
+- End-to-end Latency < 20ms (Edge)
+- Video Stream Frame Rate > 15fps
+- Recognition Accuracy > 90%
 
-### 7.2 资源消耗
+### 7.2 Resource Consumption
 
-- 客户端内存 < 200MB
-- 电池消耗 < 5%/小时
-- 带宽占用 < 2Mbps
+- Client Memory < 200MB
+- Battery Consumption < 5%/hour
+- Bandwidth Usage < 2Mbps
 
-### 7.3 可靠性
+### 7.3 Reliability
 
-- 服务可用性 > 99.9%
-- 故障恢复时间 < 2s
-- 离线功能支持
+- Service Availability > 99.9%
+- Fault Recovery Time < 2s
+- Offline Function Support
 
-# 关键设计原则：
+# Key Design Principles:
 
-1. **简单直接**
-   - 语音交互应简洁明了
-   - 避免复杂的操作步骤
-   - 提供清晰的反馈
+1. **Simplicity and Directness**
+   - Voice interaction should be concise and clear
+   - Avoid complex operation steps
+   - Provide clear feedback
 
-2. **个性化**
-   - 适应不同视力程度
-   - 考虑用户习惯和偏好
-   - 支持自定义提示方式
+2. **Personalization**
+   - Adapt to different levels of visual ability
+   - Consider user habits and preferences
+   - Support custom notification methods
 
-3. **可靠性**
-   - 确保信息准确性
-   - 稳定的性能表现
-   - 电池续航保障
+3. **Reliability**
+   - Ensure information accuracy
+   - Stable performance
+   - Battery life guarantee
 
-4. **隐私保护**
-   - 数据加密存储
-   - 选择性信息分享
-   - 隐私模式选项
+4. **Privacy Protection**
+   - Encrypted data storage
+   - Selective information sharing
+   - Privacy mode options
 
-5. **感知冗余**
-   - 多模态传感器交叉验证
-   - 分布式节点协同感知
-   - 环境数据持续积累
+5. **Perceptual Redundancy**
+   - Multi-modal sensor cross-validation
+   - Distributed node collaborative perception
+   - Continuous environmental data accumulation
 
-6. **认知友好**
-   - 智能信息过滤
-   - 压力自适应调节
-   - 场景化交互设计
+6. **Cognitive Friendliness**
+   - Intelligent information filtering
+   - Stress adaptive adjustment
+   - Contextual interaction design
 
-7. **社会融入**
-   - 非侵入式交互
-   - 群体协作模式
-   - 开放生态系统
+7. **Social Integration**
+   - Non-intrusive interaction
+   - Group collaboration mode
+   - Open ecosystem
 
-8. **伦理规范**
-   - 数据主权保护
-   - 适度技术依赖
-   - 普惠科技设计
+8. **Ethical Standards**
+   - Data sovereignty protection
+   - Moderate technology dependence
+   - Inclusive technology design
 
-# 终极拓展目标：私人多模态智能AR助手
+# Ultimate Expansion Goal: Personal Multi-modal Intelligent AR Assistant
 
-我们的愿景不仅是为BLV人群提供辅助,而是打造一个能够赋能所有人的智能伙伴。就像科幻电影中描绘的那样,它将成为每个人的得力助手,全方位增强人类的感知、认知和创造能力。
+Our vision is not only to provide assistance for BLV individuals, but to create an intelligent companion that empowers everyone. Like those depicted in science fiction movies, it will become everyone's capable assistant, comprehensively enhancing human perception, cognition, and creativity.
 
-通过可穿戴设备和AR/VR技术,这个系统将无缝融入人们的日常生活,让每个人都能突破自身局限,发挥更大潜能。
+Through wearable devices and AR/VR technology, this system will seamlessly integrate into people's daily lives, enabling everyone to break through their limitations and unleash greater potential.
 
-## 终极目标愿景
+## Ultimate Vision
 
-1. **超级感知能力**
-   - 全光谱视觉增强(红外、紫外、X射线等)
-   - 远距离精确听觉
-   - 微观世界探测
-   - 多维数据实时可视化
-   - 危险预警与防护
+1. **Super Perception Capabilities**
+   - Full-spectrum Visual Enhancement (Infrared, Ultraviolet, X-ray, etc.)
+   - Long-distance Precise Hearing
+   - Microscopic World Detection
+   - Multi-dimensional Data Real-time Visualization
+   - Danger Warning and Protection
 
-2. **认知能力倍增**
-   - 即时知识检索与集成
-   - 多任务并行处理
-   - 增强记忆与学习
-   - 创造力激发
-   - 决策支持系统
+2. **Cognitive Ability Multiplication**
+   - Instant Knowledge Retrieval and Integration
+   - Multi-task Parallel Processing
+   - Enhanced Memory and Learning
+   - Creativity Stimulation
+   - Decision Support System
 
-3. **无界交互体验**
-   - 意念控制界面
-   - 全息投影交互
-   - 触觉反馈网络
-   - 跨语言实时沟通
-   - 情感共鸣系统
+3. **Boundless Interaction Experience**
+   - Mind Control Interface
+   - Holographic Projection Interaction
+   - Haptic Feedback Network
+   - Cross-language Real-time Communication
+   - Emotional Resonance System
 
-4. **数字化生命助手**
-   - 健康状态实时监测
-   - 个性化能力训练
-   - 生活方式优化
-   - 社交关系增强
-   - 职业发展规划
+4. **Digital Life Assistant**
+   - Real-time Health Status Monitoring
+   - Personalized Ability Training
+   - Lifestyle Optimization
+   - Social Relationship Enhancement
+   - Career Development Planning
 
-## 技术发展路线
+## Technology Development Roadmap
 
-1. **感知技术革新**
-   - 量子传感器阵列
-   - 生物电信号解码
-   - 脑机接口突破
-   - 全息计算平台
-   - 智能材料集成
+1. **Perception Technology Innovation**
+   - Quantum Sensor Array
+   - Bioelectric Signal Decoding
+   - Brain-computer Interface Breakthrough
+   - Holographic Computing Platform
+   - Smart Material Integration
 
-2. **认知计算飞跃**
-   - 类脑计算架构
-   - 量子认知模型
-   - 混合智能系统
-   - 自主学习进化
-   - 群体智慧整合
+2. **Cognitive Computing Leap**
+   - Brain-like Computing Architecture
+   - Quantum Cognitive Model
+   - Hybrid Intelligent System
+   - Self-learning Evolution
+   - Collective Wisdom Integration
 
-3. **交互范式革命**
-   - 脑波直接通信
-   - 混合现实空间
-   - 情感计算网络
-   - 意识层协同
-   - 数字孪生交互
+3. **Interaction Paradigm Revolution**
+   - Brainwave Direct Communication
+   - Mixed Reality Space
+   - Emotional Computing Network
+   - Consciousness Layer Collaboration
+   - Digital Twin Interaction
 
-4. **生命科技融合**
-   - 基因优化指导
-   - 微生物组调节
-   - 神经可塑性增强
-   - 衰老干预系统
-   - 意识扩展技术
+4. **Life Technology Integration**
+   - Genetic Optimization Guidance
+   - Microbiome Regulation
+   - Neural Plasticity Enhancement
+   - Aging Intervention System
+   - Consciousness Expansion Technology
 
-## 未来应用场景
+## Future Application Scenarios
 
-1. **创造力激发空间**
+1. **Creativity Stimulation Space**
    ```plaintext
-   - 跨领域知识智能关联
-   - 灵感实时捕捉与可视化
-   - 创意协同与群体智慧
-   - 作品快速原型与优化
+   - Cross-domain Knowledge Intelligent Association
+   - Inspiration Real-time Capture and Visualization
+   - Creative Collaboration and Collective Wisdom
+   - Work Rapid Prototyping and Optimization
    ```
 
-2. **超级学习环境**
+2. **Super Learning Environment**
    ```plaintext
-   - 沉浸式知识体验
-   - 个性化学习路径
-   - 技能快速获取
-   - 群体智慧共享
+   - Immersive Knowledge Experience
+   - Personalized Learning Path
+   - Skill Rapid Acquisition
+   - Collective Wisdom Sharing
    ```
 
-3. **生命质量提升**
+3. **Life Quality Improvement**
    ```plaintext
-   - 健康状态主动干预
-   - 潜能开发与实现
-   - 压力智能调节
-   - 生活方式优化
+   - Health Status Active Intervention
+   - Potential Development and Realization
+   - Stress Intelligent Regulation
+   - Lifestyle Optimization
    ```
 
-4. **社会协同进化**
+4. **Social Collaborative Evolution**
    ```plaintext
-   - 群体智慧涌现
-   - 文明演进加速
-   - 人机共生优化
-   - 可持续发展规划
+   - Collective Wisdom Emergence
+   - Civilization Evolution Acceleration
+   - Human-machine Symbiosis Optimization
+   - Sustainable Development Planning
    ```
 
-## 发展愿景
+## Development Vision
 
-打造一个真正的"数字超级助手",它将帮助人类突破生理和认知的限制,开启人类能力的新纪元：
+Create a true "Digital Super Assistant" that will help humanity break through physiological and cognitive limitations, ushering in a new era of human capabilities:
 
-1. **能力倍增**
-   - 感知范围扩展
-   - 认知能力提升
-   - 创造力激发
-   - 生命潜能释放
+1. **Ability Multiplication**
+   - Perception Range Expansion
+   - Cognitive Ability Enhancement
+   - Creativity Stimulation
+   - Life Potential Release
 
-2. **个性发展**
-   - 天赋潜能挖掘
-   - 兴趣精准培养
-   - 能力定向增强
-   - 人生道路优化
+2. **Personal Development**
+   - Talent Potential Mining
+   - Interest Precise Cultivation
+   - Ability Targeted Enhancement
+   - Life Path Optimization
 
-3. **群体智慧**
-   - 知识无界共享
-   - 创意协同涌现
-   - 社会价值共创
-   - 文明演进加速
+3. **Collective Wisdom**
+   - Boundless Knowledge Sharing
+   - Creative Collaborative Emergence
+   - Social Value Co-creation
+   - Civilization Evolution Acceleration
 
-4. **人机共生**
-   - 智能协同进化
-   - 能力互补共赢
-   - 价值观对齐
-   - 可持续发展
+4. **Human-machine Symbiosis**
+   - Intelligent Collaborative Evolution
+   - Ability Complementary Win-win
+   - Value Alignment
+   - Sustainable Development
 
-这个系统将成为人类进化的新引擎,帮助每个人突破限制、实现超越,最终推动整个人类文明向更高层次跃升。
+This system will become a new engine for human evolution, helping everyone break through limitations and achieve transcendence, ultimately propelling human civilization to a higher level.
