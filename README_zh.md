@@ -279,9 +279,9 @@ timeline
 
 ## 📚 文档
 
-- [架构设计](https://github.com/shaowenfu/VISTA/blob/main/Docs/architecture.md)
-- [需求分析](https://github.com/shaowenfu/VISTA/blob/main/Docs/requirements.md)
-- [MVP产品计划](https://github.com/shaowenfu/VISTA/blob/main/Docs/MVP_plan.md)
+- [架构设计](https://github.com/shaowenfu/VISTA/blob/main/Docs_simplified_Chinese/architecture_zh.md)
+- [需求分析](https://github.com/shaowenfu/VISTA/blob/main/Docs_simplified_Chinese/requirements_zh.md)
+- [MVP产品计划](https://github.com/shaowenfu/VISTA/blob/main/Docs_simplified_Chinese/MVP_plan_zh.md)
 - [API文档](https://github.com/shaowenfu/Vista_backend/docs/api.md)
 
 ## 🌐 社区
