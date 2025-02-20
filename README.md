@@ -277,8 +277,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📚 Documentation
 
-- [Architecture Design](https://github.com/shaowenfu/Vista/docs/architecture.md)
-- [Requirements Analysis](https://github.com/shaowenfu/Vista/docs/requirements.md)
+- [Architecture Design](https://github.com/shaowenfu/VISTA/blob/main/Docs/architecture.md)
+- [Requirements Analysis](https://github.com/shaowenfu/VISTA/blob/main/Docs/requirements.md)
+- [MVP plan](https://github.com/shaowenfu/VISTA/blob/main/Docs/MVP_plan.md)
 - [API Documentation](https://github.com/shaowenfu/Vista_backend/docs/api.md)
 
 ## 🌐 Community
